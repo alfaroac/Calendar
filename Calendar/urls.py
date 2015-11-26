@@ -18,4 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^calendar/', include('apps.calendario.urls')),
+   # url(r'^informes/', include('apps.informes.urls')), 
+    #url(r'^$', include('apps.perfiles.urls')),
 ]
