@@ -15,6 +15,7 @@ import datetime
 def calendar(request):
 	return render(request,'index.html')
 
+<<<<<<< HEAD
 
 import datetime
 
@@ -50,3 +51,7 @@ class CalendarJsonListView(ListView):
 class CalendarView(TemplateView):
 
     template_name = 'django_bootstrap_calendar/calendar.html'
+=======
+def actividad(request):
+	return render(request,'calendar/actividad.html')
+>>>>>>> 608bef6e2ee93663e9478217778a90c22cacd00a
