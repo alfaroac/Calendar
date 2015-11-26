@@ -22,5 +22,3 @@ class Manager(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL)
 	institucion = models.ForeignKey(Institution)
 	
-
-
