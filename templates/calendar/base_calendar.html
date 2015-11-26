@@ -283,10 +283,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="{% url 'calendar_app:actividad' %}"><i class="fa fa-table fa-fw"></i>Calendario</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="{% url 'informes_app:institucion' %}"><i class="fa fa-edit fa-fw"></i> Institución</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'perfiles_app:usuarios' %}"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -360,11 +363,14 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+<div id="page-wrapper">
+    
 
  
 {% block contenido %}
 	
 {% endblock contenido %}
+    </div>
 	</div>
 {% endblock content %}
 
