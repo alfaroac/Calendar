@@ -72,13 +72,21 @@
 	      <th>Estado</th>
 	      <th>Opciones</th>
 	    </tr>
+	    {% for institucion in instituciones  %}
+	    	
+	    
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>Editar/ Eliminar</td>
-		</tr>		
+			<td>{{institucion.codeInstitution}}</td>
+			<td>{{institucion.nameInstitution}}</td>
+			<td>{{institucion.address}}</td>
+			<td>{{institucion.state}}</td>
+			<td>
+			<a href="#" class="btn btn-success btn-xs"> <span class="glyphicon glyphicon-eye-open"></span></a>
+			<a href="#" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
+			<a href="#" class="btn btn-danger btn-xs"> <span class="glyphicon glyphicon-trash"></span></a>
+			</td>
+		</tr>
+		{% endfor %}		
 	</table>
 
 </div>
