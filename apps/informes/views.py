@@ -19,7 +19,7 @@ def crear_registro(request):
 		modelform=InstitucionForm(request.POST)
 		if modelform.is_valid():
 			modelform.save()
-			return redirect(reverse('infores_app:institucion'))
+			return redirect(reverse('informes_app:institucion'))
 	else:
 		modelform=InstitucionForm()
 
