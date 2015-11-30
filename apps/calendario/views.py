@@ -1,10 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-<<<<<<< HEAD
-from .models import Activity
-from .forms import ActivityForm
-=======
->>>>>>> cfe346dba00d0cd164a9ff667f6f21c8bf70ed20
 
 from django.core.urlresolvers import reverse
 
