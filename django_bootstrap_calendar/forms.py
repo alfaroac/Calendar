@@ -2,7 +2,6 @@ from django import forms
 from .models import CalendarEvent
 from django.utils.translation import ugettext_lazy as _
 from django.forms.extras.widgets import SelectDateWidget
-from bootstrap3_datetime.widgets import DateTimePicker
 from django.contrib.admin import widgets  
 CSS_CLASS_CHOICES = (
         ('', _('Seleccione')),
