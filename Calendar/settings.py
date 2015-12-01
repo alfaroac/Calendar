@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'apps.informes',
     'apps.perfiles',
     'django_bootstrap_calendar',
+    'bootstrap3_datetime',
     
 )
 
