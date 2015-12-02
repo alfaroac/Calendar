@@ -20,7 +20,7 @@ def listaUsuarios(request):
 class userRegister(FormView):
 	template_name='perfil/registra_usuario.html'
 	form_class=UserForm
-	success_url=reverse_lazy('usuarios')
+	success_url=reverse_lazy('perfiles_app:usuarios')
 
 	def form_valid(self, form):
 		user=form.save()
