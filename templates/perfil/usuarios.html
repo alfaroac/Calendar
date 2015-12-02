@@ -34,8 +34,8 @@
 		{% for user in lista %}		
 			<tr>
 				<td>{{user.usuario}}</td>
-				<td>{{user.nombre}}</td>
-				<td>{{user.apellidos}}</td>
+				<td>{{user.usuario.first_name}}</td>
+				<td>{{user.usuario.last_name}}</td>
 				<td>{{user.dni}}</td>
 				<td>{{user.sexo}}</td>
 				<td>{{user.direccion}}</td>
@@ -43,7 +43,7 @@
 				<td>{{user.email}}</td>
 				<td>{{user.estado}}</td>
 				<td><img src="{{user.imagen.url}}" width="50px" height="50px" style="border-radius:50%" alt=""></td>
-				<td>{{user.role}}</td>
+				<td>{{user.rol}}</td>
 				<td>
 					<a href="#" class="btn btn-success btn-xs"> <span class="glyphicon glyphicon-eye-open"></span></a>
 					<a href="#" class="btn btn-warning btn-xs"> <span class="glyphicon glyphicon-pencil"></span></a>
