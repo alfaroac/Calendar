@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, FormView
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.template import RequestContext
 from .models import Perfiles
 from .forms import UserForm
@@ -53,3 +53,4 @@ def deleteUsers(request, id):
 	obj_delete=Perfiles.objects.get(pk=id)
 	obj_delete.delete()
 	return redirect(reverse('perfiles_app:users'))
+	
