@@ -1,10 +1,19 @@
-{% extends "base_panel.html" %}
+{% extends "calendar/base_calendar.html" %}
 
 {% block title %}
 	Registrar usuario
 {% endblock title %}
 
 {% block contenido %}
+<div class="page-header">
+	<h4>
+		<a href="{% url 'perfiles_app:usuarios' %}" class="btn btn-success">
+			<span class="glyphicon glyphicon-chevron-left"></span>Regresar
+		</a>
+		<strong>Crear Registro</strong>
+	</h4>
+</div>{# page-header #}
+
 	<form method="POST">
 		{% csrf_token %}
 		{{form.as_p}}

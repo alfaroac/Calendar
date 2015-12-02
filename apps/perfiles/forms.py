@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Rol
+from .models import Rol, Perfiles
 
 class UserForm(UserCreationForm):
 	rol = forms.ModelChoiceField(queryset=Rol.objects.all(),
@@ -12,3 +12,6 @@ class UserForm(UserCreationForm):
 		model = User
 		fields = ('first_name', 'last_name', 'email', 'username', 'rol')
 
+# class UserRegisterForm(forms.ModelForm):
+# 	class Meta:
+			
