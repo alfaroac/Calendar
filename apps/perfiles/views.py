@@ -53,4 +53,10 @@ def deleteUsers(request, id):
 	obj_delete=Perfiles.objects.get(pk=id)
 	obj_delete.delete()
 	return redirect(reverse('perfiles_app:users'))
-	
+
+
+@login_required
+def calendar(request):
+	return render(request,'index.html')
+
+
