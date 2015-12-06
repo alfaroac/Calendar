@@ -141,6 +141,9 @@
                         <a href="{%url 'calendario_app:calendar' %}"><i class="fa fa-table fa"></i> Calendario</a>
                     </li>
                     <li>
+                        <a href="{%url 'calendario_app:evidence' %}"><i class="fa fa-book fa"></i> Evidencias</a>
+                    </li>
+                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Institución <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
@@ -148,6 +151,9 @@
                             </li>                                            
                             <li>
                                 <a href="{% url 'informes_app:informe' %}"><i class="fa fa-fw fa-file"></i> Archivos</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'informes_app:director' %}"><i class="fa fa-fw fa-user"></i> Director</a>
                             </li>
                         </ul>
                     </li>
