@@ -49,10 +49,10 @@ class EvidenceForm(forms.ModelForm):
 		exclude=()
 		widgets={
 
-		'calendar':forms.TextInput(attrs={'class':'form-control'}),
+		#'calendar':forms.TextInput(attrs={'class':'input-group-addon dropdown-toggle'}),
 		'title':forms.TextInput(attrs={'class':'form-control'}),
 		'description':forms.TextInput(attrs={'class':'form-control'}),
-		'fileEvidence':forms.FileInput(attrs={'class':'btn btn-primary'	}), #glyphicon glyphicon-upload
+		'fileEvidence':forms.FileInput(attrs={'class':'btn btn-warning'}), #glyphicon glyphicon-upload
 		# 'dateLoad':forms.DateField(attrs={'class':'form-control'}),
 		# #'end':forms.TextInput(attrs={'class':'form-control'}),
 		# 'user':forms.TextInput(attrs={'class':'form-control'}),

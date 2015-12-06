@@ -9,7 +9,7 @@ urlpatterns = [
   url(r'^$', CalendarView.as_view(), name='calendar'),
   url(r'^crear_evento$', CrearEvento.as_view(), name='crear_evento'),
   url(r'^datalle/(?P<evento_id>[0-9]+)/$', 'django_bootstrap_calendar.views.detalle_evento', name='detalle'),
-
+  url(r'^delete/(?P<id>\d+)/$', 'django_bootstrap_calendar.views.delEvento', name='delEvento'),
   
   url(r'^evidencias/$','django_bootstrap_calendar.views.evidencias', name='evidence'),
   url(r'^evidencias/agregar/$','django_bootstrap_calendar.views.addEvidence', name='addEvidence'),

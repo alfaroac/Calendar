@@ -61,6 +61,11 @@ def detalle_evento(request, evento_id):
     evento = get_object_or_404(CalendarEvent, pk=evento_id)
     return render(request, 'eventos/detalle_evento.html',{"evento":evento})
 
+def delEvento(request, id):
+    obj_delete = CalendarEvent.objects.get(pk=id)    
+    obj_delete.delete()
+    return redirect(reverse('calendario_app:calendar'))
+    
 
 # evidences
 def evidencias(request):
