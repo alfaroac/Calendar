@@ -43,4 +43,17 @@ class EventForm(forms.ModelForm):
 class EvidenceForm(forms.ModelForm):
 	class Meta:
 		model=Evidences
+		# objcalendar=model.calendar.objects.all()
+		# calendar = forms.MultipleChoiceField(required=False,
+  #       widget=forms.CheckboxSelectMultiple, choices=objcalendar)
 		exclude=()
+		widgets={
+
+		'calendar':forms.TextInput(attrs={'class':'form-control'}),
+		'title':forms.TextInput(attrs={'class':'form-control'}),
+		'description':forms.TextInput(attrs={'class':'form-control'}),
+		'fileEvidence':forms.FileInput(attrs={'class':'btn btn-primary'	}), #glyphicon glyphicon-upload
+		# 'dateLoad':forms.DateField(attrs={'class':'form-control'}),
+		# #'end':forms.TextInput(attrs={'class':'form-control'}),
+		# 'user':forms.TextInput(attrs={'class':'form-control'}),
+		}
