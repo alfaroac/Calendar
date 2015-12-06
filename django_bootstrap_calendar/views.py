@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.template import RequestContext
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.core.urlresolvers import reverse
 from .models import CalendarEvent, Evidences
 from .forms import EventForm, EvidenceForm
@@ -54,6 +54,14 @@ class CrearEvento(FormView):
     def form_valid(self, form):
         event = form.save()
         return super(CrearEvento, self).form_valid(form)
+
+
+def detalle_evento(request, evento_id):
+
+    evento = get_object_or_404(CalendarEvent, pk=evento_id)
+    return render(request, 'eventos/detalle_evento.html',{"evento":evento})
+
+
 # evidences
 def evidencias(request):
     obj_evid=Evidences.objects.all()
