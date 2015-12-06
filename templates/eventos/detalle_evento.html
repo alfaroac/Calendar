@@ -1,0 +1,12 @@
+<h1>{{evento.title}}</h1>
+
+<p>{{evento.description}}</p>
+
+<ul>
+
+{% for ev in evento.users.all %}
+	<li>{{ ev.first_name }}</li>
+
+{% endfor %}
+
+</ul>
