@@ -3,34 +3,37 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Rol, Perfiles
 
+class UsersForm(UserCreationForm):
+	class Meta:
+		model=User
+ 		exclude=()
+ 		widgets={
+ 		'username':forms.TextInput(attrs={'class':'form-control'}),
+ 		'user':forms.TextInput(attrs={'class':'form-control'}),
+ 		'first_name':forms.TextInput(attrs={'class':'form-control'}),
+ 		'last_name':forms.TextInput(attrs={'class':'form-control'}),
+ 		'email':forms.EmailInput(attrs={'class':'form-control'}),
+ 		'password':forms.TextInput(attrs={'class':'form-control'}),
+ 		}
+
 SEX = (
         ('M', 'Masculino'),
         ('F', 'Femenino'),
     )
 
-class UserForm(forms.ModelForm):	
-	# rol = forms.ModelChoiceField(queryset=Rol.objects.all(),required=True)
-	# dni = forms.CharField(max_length=8)
-	# telefono = forms.CharField(max_length=13)
-	# sexo=forms.ChoiceField(SEX)
-	# direccion=forms.CharField(max_length=70)
-	# estado=forms.BooleanField()
-	# imagen=forms.ImageField()
+class PerfilForm(forms.ModelForm):		
 	class Meta:
 		model=User
 		model=Perfiles
 		exclude=()
-		#fields = ( 'rol', 'dni', 'telefono', 'sexo','direccion','estado','imagen')
+		widgets={
+		#'usuario':forms.TextInput(attrs={'class':'form-control'}),
+		'telefono':forms.TextInput(attrs={'class':'form-control'}),
+		'dni':forms.TextInput(attrs={'class':'form-control'}),
+		'direccion':forms.TextInput(attrs={'class':'form-control'}),
+		#'imagen':forms.FileInput(attrs={'class':'btn btn-warning'}),
+		}
 
-# class UsersForm(UserCreationForm):
-# 	class Meta:
-# 		model=User
-# 		exclude()
-
-class UsersForm(UserCreationForm):
-	class Meta:
-		model=User
- 		exclude=()
 
 class RoleForm(forms.ModelForm):
 	class Meta:

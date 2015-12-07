@@ -4,16 +4,18 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.template import RequestContext
 from .models import Perfiles, Rol
-from .forms import UserForm, RoleForm, UsersForm 
+from .forms import PerfilForm, RoleForm, UsersForm 
 
 from django.contrib.auth.models import User
 
 # users
+@login_required
 def users(request):
 	lista=User.objects.all()
 	numreg=lista.count()
 	return render(request,'users/users_main.html',{'lista':lista,'cantidad':numreg})
 
+@login_required
 def addUsers(request):
 	if request.method=='POST':
 		objform=UsersForm(request.POST)
@@ -24,6 +26,7 @@ def addUsers(request):
 		objform=UsersForm()
 	return render(request, 'users/addUsers.html',{'form':objform})
 
+@login_required
 def updUser(request, id):
 	obj_edit=User.objects.get(pk=id)
 	if request.method=='POST':
@@ -35,6 +38,7 @@ def updUser(request, id):
 		formulario=UsersForm(instance=obj_edit)
 	return render(request,'users/updUser.html', {'form':formulario},context_instance = RequestContext(request))
 
+@login_required
 def delUser(request, id, template_name='users/delUser.html'):
     obj_delete = User.objects.get(pk=id)    
     if request.method=='POST':
@@ -58,7 +62,7 @@ def perfiles(request):
 
 class addPerfil(FormView):
 	template_name='users/addPerfil.html'
-	form_class=UserForm
+	form_class=PerfilForm
 	success_url=reverse_lazy('perfiles_app:perfil')
 
 	def form_valid(self, form):
@@ -79,12 +83,12 @@ class addPerfil(FormView):
 def updPerfil(request, id):
 	obj_edit=Perfiles.objects.get(pk=id)
 	if request.method=='POST':
-		formulario=UserForm(request.POST, instance=obj_edit)
+		formulario=PerfilForm(request.POST, instance=obj_edit)
 		if formulario.is_valid():
 			formulario.save()
 			return redirect(reverse('perfiles_app:perfil'))
 	else:
-		formulario=UserForm(instance=obj_edit)
+		formulario=PerfilForm(instance=obj_edit)
 	return render(request,'users/updPerfil.html', {'form':formulario},context_instance = RequestContext(request))
 
 @login_required	
