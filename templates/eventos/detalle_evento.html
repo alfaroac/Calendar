@@ -27,23 +27,24 @@
 </div>
 <br>
 <div>
-<div align="center"><h3>Invitados</h3></div>
 	<table class="table table-striped table-condenced table-hover">
 			<thead>
 				<tr>
+					<th colspan="2">
+						<div align="center"><h4>Invitados</h4></div>
+						
+					</th>
+				</tr>
+				<tr>
 					<th>Nombre</th>
 					<th>Apellidos</th>
-					<th>Opciones</th>
 				</tr>
 			</thead>
 			<tbody>
 			{% for invitado in evento.users.all %}				
 				<tr>
 					<td>{{invitado.first_name}}</td>
-					<td>{{invitado.last_name}}</td>
-					<td>
-					<label><input type="checkbox"> Invitar</label>	
-					</td>
+					<td>{{invitado.last_name}}</td>					
 				</tr>
 			{% endfor %}				
 			</tbody>

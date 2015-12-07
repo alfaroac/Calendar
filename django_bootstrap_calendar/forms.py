@@ -33,6 +33,7 @@ class EventForm(forms.ModelForm):
 		#'end':forms.TextInput(attrs={'class':'form-control'}),
 		'place':forms.TextInput(attrs={'class':'form-control'}),
 		'description':forms.TextInput(attrs={'class':'form-control'}),
+		'users':forms.CheckboxSelectMultiple(),
 		}
 
 	def __init__(self, *args, **kwargs):
@@ -49,7 +50,7 @@ class EvidenceForm(forms.ModelForm):
 		exclude=()
 		widgets={
 
-		#'calendar':forms.TextInput(attrs={'class':'input-group-addon dropdown-toggle'}),
+		#'calendar':forms.CheckboxSelectMultiple(),
 		'title':forms.TextInput(attrs={'class':'form-control'}),
 		'description':forms.TextInput(attrs={'class':'form-control'}),
 		'fileEvidence':forms.FileInput(attrs={'class':'btn btn-warning'}), #glyphicon glyphicon-upload
