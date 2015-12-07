@@ -37,6 +37,7 @@ class userRegister(FormView):
 
 def editUsers(request, id):
 	obj_edit=Perfiles.objects.get(pk=id)
+	
 	if request.method=='POST':
 		formulario=UserForm(request.POST, instance=obj_edit)
 		if formulario.is_valid():
@@ -47,9 +48,13 @@ def editUsers(request, id):
 	return render(request,'users/updUsers.html', {'form':formulario},context_instance = RequestContext(request))
 	
 def deleteUsers(request, id, template_name='users/delUser.html'):
-    obj_delete = Perfiles.objects.get(pk=id)    
+    obj_delete = Perfiles.objects.get(pk=id)
+    user = obj_delete.usuario
+
+    
     if request.method=='POST':
         obj_delete.delete()
+        user.delete()
         return redirect(reverse('perfiles_app:users'))
     return render(request, template_name, {'object':obj_delete})
 

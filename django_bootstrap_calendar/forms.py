@@ -23,7 +23,7 @@ class EventForm(forms.ModelForm):
       #                                 "pickSeconds": False}))
 	class Meta:
 		model=CalendarEvent
-		fields = ['title', 'url', 'css_class','start','end','place','description']
+		fields = ['title', 'url', 'css_class','start','end','place','description','users']
 		exclude=()
 		widgets={
 		'title':forms.TextInput(attrs={'class':'form-control col-md-6'}),

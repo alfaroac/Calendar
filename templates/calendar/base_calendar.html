@@ -135,10 +135,16 @@
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
             <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    {% if user.perfiles.rol.rol == "Funcionario"%}
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="{%url 'calendario_app:calendar' %}"><i class="fa fa-table fa"></i> Calendario</a>
+                        <a href="{%url 'calendario_app:calendar' %}"><i class="fa fa-table fa"></i> Calendario
+                       
+                         
+                       
+                        </a>
                     </li>
                     <li>
                         <a href="{%url 'calendario_app:evidence' %}"><i class="fa fa-book fa"></i> Evidencias</a>
@@ -170,6 +176,18 @@
                     </li>
                     
                 </ul>
+                 {% endif %}
+                        {% if user.perfiles.rol.rol == "Director" %}
+                          <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="{%url 'informes_app:informe' %}"><i class="fa fa-table fa"></i> Informes
+                       
+                         
+                       
+                        </a>
+                    </li>
+
+                        {% endif %}
             </div>
             <!-- /.navbar-collapse -->
     </nav>
