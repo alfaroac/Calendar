@@ -137,7 +137,7 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    {% if user.perfiles.rol.rol == "Funcionario"%}
+                    {% if user.perfiles.rol.rol == "Funcionario" or user.is_staff%}
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
                         <a href="{%url 'calendario_app:calendar' %}"><i class="fa fa-table fa"></i> Calendario
