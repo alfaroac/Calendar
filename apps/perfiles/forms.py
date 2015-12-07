@@ -17,6 +17,7 @@ class UserForm(forms.ModelForm):
 	# estado=forms.BooleanField()
 	# imagen=forms.ImageField()
 	class Meta:
+		model=User
 		model=Perfiles
 		exclude=()
 		#fields = ( 'rol', 'dni', 'telefono', 'sexo','direccion','estado','imagen')
@@ -26,7 +27,7 @@ class UserForm(forms.ModelForm):
 # 		model=User
 # 		exclude()
 
-class UsersForm(forms.ModelForm):
+class UsersForm(UserCreationForm):
 	class Meta:
 		model=User
  		exclude=()
