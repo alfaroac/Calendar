@@ -8,18 +8,28 @@ SEX = (
         ('F', 'Femenino'),
     )
 
-class UserForm(UserCreationForm):	
-	rol = forms.ModelChoiceField(queryset=Rol.objects.all(),required=True)
-	dni = forms.CharField(max_length=8)
-	telefono = forms.CharField(max_length=13)
-	sexo=forms.ChoiceField(SEX)
-	direccion=forms.CharField(max_length=70)
-	estado=forms.BooleanField()
-	imagen=forms.ImageField()
+class UserForm(forms.ModelForm):	
+	# rol = forms.ModelChoiceField(queryset=Rol.objects.all(),required=True)
+	# dni = forms.CharField(max_length=8)
+	# telefono = forms.CharField(max_length=13)
+	# sexo=forms.ChoiceField(SEX)
+	# direccion=forms.CharField(max_length=70)
+	# estado=forms.BooleanField()
+	# imagen=forms.ImageField()
 	class Meta:
-		model = User
-		fields = ('first_name', 'last_name', 'email', 'username', 'rol', 'dni', 'telefono', 'sexo','direccion','estado','imagen')
+		model=Perfiles
+		exclude=()
+		#fields = ( 'rol', 'dni', 'telefono', 'sexo','direccion','estado','imagen')
 
+# class UsersForm(UserCreationForm):
+# 	class Meta:
+# 		model=User
+# 		exclude()
+
+class UsersForm(forms.ModelForm):
+	class Meta:
+		model=User
+ 		exclude=()
 
 class RoleForm(forms.ModelForm):
 	class Meta:
