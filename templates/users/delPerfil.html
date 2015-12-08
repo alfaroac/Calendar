@@ -14,6 +14,7 @@
 	<form method="POST">{% csrf_token %}
 
 	<div class="alert alert-danger">
+	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	<span class="glyphicon glyphicon-exclamation-sign"></span>
 	  <strong>Cuidado!</strong> Estas seguro de querer eliminar el usuario: "<strong>{{ object }}</strong>" ?
 	</div>		
