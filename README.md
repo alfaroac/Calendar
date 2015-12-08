@@ -1,2 +1,2 @@
 # Calendar
-calendario de actividades
+Calendario para la planificacion de actividades

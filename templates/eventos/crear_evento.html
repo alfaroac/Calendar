@@ -9,7 +9,7 @@
 	<div class="">
 		<div class="page-header">
 			<h4>
-				<a href="{%url 'calendario_app:calendar' %}" class="btn btn-success">
+				<a href="{%url 'calendario_app:calendar' %}" class="btn btn-warning">
 					<span class="glyphicon glyphicon-chevron-left"></span>Regresar
 				</a>
 				<strong><span class="glyphicon glyphicon-info-sign"></span>
@@ -18,13 +18,13 @@
 			</h4>
 		</div>{# page-header #}
 
-		<form method="POST">
+		<!-- <form method="POST">
 			{% csrf_token %}
 			{{form.as_p}}
 			<button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
-		</form>
+		</form> -->
 
-		<!-- <div class="row">
+		<div class="row">
 			<div class="col-md-12">
 				<form role="form" method="POST" enctype="multipart/form-data">
 					    {% csrf_token %}
@@ -61,14 +61,18 @@
 					<div class="form-group">
 					    <label>Descripcion</label>
 						{{form.description}}
+					</div>	
+					<div class="form-group">
+					    <label>Usuarios a invitar</label>
+						{{form.users}}
 					</div>						  
 
 					<div class="form-group">
-					    <input type="submit" class="btn btn-success" value="Registrar">
+					    <button type="submit/button" class="btn btn-success pull-right">Registrar<span class="glyphicon glyphicon-chevron-right"></span></button>
 					</div>
 				</form>
 			</div>
-		</div> -->
+		</div>
 
 	</div>
 {% endblock contenido %}
